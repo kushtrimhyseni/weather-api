@@ -11,8 +11,8 @@ const WeatherMapApi = () => {
     inputHandler,
     clickHandler,
     clearResults,
-    weather,
-    city,
+    // weather,
+    // city,
   } = useContext(WeatherApiContext);
   // const { setAlert } = useContext(AlertContext);
 
