@@ -32,7 +32,7 @@ const WeatherMapApi = () => {
       <div className="container mx-auto flex flex-col md: flex-row justify-center items-center">
         <div className="form-control w-full max-w-xs">
           <label className="label">
-            <span className="label-text text-white-900">Enter city?</span>
+            <span className="label-text text-base-500">Enter city?</span>
           </label>
           <input
             ref={clearInput}
