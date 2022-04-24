@@ -1,24 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import WeatherMapApi from "./components/WeatherMapApi";
+import { AlertProvider } from "./components/context/AlertContext";
+import { WeatherProvider } from "./components/context/WeatherApiContext";
+import WeatherCard from "./components/WeatherCard";
+import WeatherBanner from "./components/WeatherBanner";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <WeatherBanner />
+      <WeatherProvider>
+        <AlertProvider>
+          <WeatherMapApi />
+          <WeatherCard />
+        </AlertProvider>
+      </WeatherProvider>
+    </>
   );
 }
 
