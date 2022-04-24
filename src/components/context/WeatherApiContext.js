@@ -21,7 +21,7 @@ export const WeatherProvider = ({ children }) => {
 
   const getWeather = async () => {
     const response = await fetch(
-      `http://api.openweathermap.org/data/2.5/forecast?q=${input}&units=metric&appid=a50be4bec2a56bfb7eab9bdf5bcd4fb5`
+      `https://api.openweathermap.org/data/2.5/forecast?q=${input}&units=metric&appid=a50be4bec2a56bfb7eab9bdf5bcd4fb5`
     );
     const data = await response.json();
     if (data.cod === "404") {

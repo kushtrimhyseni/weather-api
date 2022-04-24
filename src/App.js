@@ -1,4 +1,4 @@
-import WeatherMapApi from "./components/WeatherMapApi";
+import WeatherInputCity from "./components/WeatherInputCity";
 import { WeatherProvider } from "./components/context/WeatherApiContext";
 import WeatherCard from "./components/WeatherCard";
 import WeatherBanner from "./components/WeatherBanner";
@@ -10,7 +10,7 @@ function App() {
       <WeatherBanner />
       <WeatherProvider>
         <AlertProvider>
-          <WeatherMapApi />
+          <WeatherInputCity />
           <WeatherCard />
         </AlertProvider>
       </WeatherProvider>

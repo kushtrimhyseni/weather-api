@@ -6,15 +6,28 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@200;400&display=swap");
 
 .card-body {
-  background: #67b26f; /* fallback for old browsers */
+  background: #2980b9; /* fallback for old browsers */
   background: -webkit-linear-gradient(
     to right,
-    #4ca2cd,
-    #67b26f
+    #2c3e50,
+    #2980b9
   ); /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(
     to right,
-    #4ca2cd,
-    #67b26f
+    #2c3e50,
+    #2980b9
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.card-image {
+  background: #00d2ff; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #928dab,
+    #00d2ff
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #928dab,
+    #00d2ff
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }

@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import CityInfo from "./CityInfo";
 import WeatherApiContext from "./context/WeatherApiContext";
 import Spinner from "./Spinner";
 
@@ -8,13 +9,13 @@ const WeatherCard = () => {
 
   if (!loading) {
     return (
-      <>
+      <div className="container mx-auto flex flex-col lg:flex-row gap-4">
         {error ? (
           <div className="flex justify-center items-center text-base-400 text-3xl font-md font-raleway mt-8">
             {error}
           </div>
         ) : (
-          <div className="container mx-auto flex flex-col justify-center items-center gap-4 mt-12 mb-12 p-6 lg:p-0">
+          <div className="container w-full flex flex-col justify-start items-center gap-4 mt-12 mb-12 p-6 md:p-0 order-last lg:order-first">
             {weather?.map((list) => {
               console.log(list);
               id++;
@@ -25,10 +26,10 @@ const WeatherCard = () => {
               }).format(today);
               return (
                 <div
-                  className="card card-side bg-[#5a5a5a] shadow-xl w-full"
+                  className="card card-side bg-[#5a5a5a] shadow-xl w-full flex-col md:flex-row"
                   key={id}
                 >
-                  <div className="flex justify-center items-center bg-grey-400 w-1/3 lg:w-[200px] bg-white-900">
+                  <div className="flex justify-center items-center bg-grey-400 w-full h-[200px]  md:h-auto md:w-1/3 lg:w-[200px] card-image">
                     <figure>
                       <img
                         src={`http://openweathermap.org/img/wn/${list.weather[0].icon}@2x.png`}
@@ -37,7 +38,7 @@ const WeatherCard = () => {
                     </figure>
                   </div>
                   <div className="card-body grid grid-cols-1 lg:grid-cols-6 gap-4 content-between">
-                    <span className="text-white-900 text-3xl font-raleway font-md text-center">
+                    <span className="text-white-900 text-3xl font-raleway font-md flex justify-center items-center">
                       {city.name}
                     </span>
                     <div className="flex flex-col justify-center items-center">
@@ -48,7 +49,7 @@ const WeatherCard = () => {
                         {newWeatherDate.split("at")[1].split("GMT")[0]}
                       </span>
                     </div>
-                    <div className="flex justify-center items-center">
+                    <div className="flex justify-center items-center gap-2">
                       <span className="card-title text-white-900 text-3xl">
                         {Math.floor(list.main.temp_max)} C&deg;
                       </span>
@@ -80,7 +81,10 @@ const WeatherCard = () => {
             })}
           </div>
         )}
-      </>
+        <div className="flex w-full md:w-1/4 md:order-first mt-12 mb-12 p-6 lg:p-0">
+          <CityInfo />
+        </div>
+      </div>
     );
   } else {
     return <Spinner />;
