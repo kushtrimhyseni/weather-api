@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import Spinner from "./Spinner";
-import Alert from "./layouts/Alert";
-import AlertContext from "./context/AlertContext";
+// import Alert from "./layouts/Alert";
+// import AlertContext from "./context/AlertContext";
 import WeatherApiContext from "./context/WeatherApiContext";
 
 const WeatherMapApi = () => {
@@ -14,12 +14,12 @@ const WeatherMapApi = () => {
     weather,
     city,
   } = useContext(WeatherApiContext);
-  const { setAlert } = useContext(AlertContext);
+  // const { setAlert } = useContext(AlertContext);
 
   if (!loading) {
     return (
       <>
-        <Alert />
+        {/* <Alert /> */}
         <div className="container mx-auto flex flex-col md: flex-row justify-center items-center">
           <div className="form-control w-full max-w-xs">
             <label className="label">
