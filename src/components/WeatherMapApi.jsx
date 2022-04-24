@@ -37,16 +37,12 @@ const WeatherMapApi = () => {
             <button onClick={clickHandler} className="btn btn-active mt-4">
               Search
             </button>
-            {city.length > 0 || weather.length > 0 ? (
-              <button
-                onClick={clearResults}
-                className="btn btn-active btn-ghost mt-4"
-              >
-                Clear
-              </button>
-            ) : (
-              false
-            )}
+            <button
+              onClick={clearResults}
+              className="btn btn-active btn-ghost mt-4"
+            >
+              Clear
+            </button>
           </div>
         </div>
       </>

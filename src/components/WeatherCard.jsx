@@ -3,7 +3,7 @@ import WeatherApiContext from "./context/WeatherApiContext";
 
 const WeatherCard = () => {
   const { weather, error, city } = useContext(WeatherApiContext);
-
+  let id = 0;
   return (
     <>
       {error ? (
@@ -13,13 +13,17 @@ const WeatherCard = () => {
       ) : (
         <div className="container mx-auto flex flex-col justify-center items-center gap-4 mt-12 mb-12 p-6 lg:p-0">
           {weather?.map((list) => {
+            id++;
             const today = new Date(list.dt_txt);
             let newWeatherDate = new Intl.DateTimeFormat("en-US", {
               dateStyle: "full",
               timeStyle: "long",
             }).format(today);
             return (
-              <div className="card card-side bg-[#5a5a5a] shadow-xl w-full">
+              <div
+                className="card card-side bg-[#5a5a5a] shadow-xl w-full"
+                key={id}
+              >
                 <div className="flex justify-center items-center bg-grey-400 w-1/3 lg:w-1/6 bg-white-900">
                   <figure>
                     <img src="./assets/icon-full-sun.svg" alt="Movie" />
