@@ -29,17 +29,19 @@ const WeatherCard = () => {
                     <img src="./assets/icon-full-sun.svg" alt="Movie" />
                   </figure>
                 </div>
-                <div className="card-body flex flex-col lg:flex-row justify-between items-center">
-                  <span className="text-white-900 text-3xl">{city.name}</span>
+                <div className="card-body grid grid-cols-1 lg:grid-cols-6 gap-4 content-between">
+                  <span className="text-white-900 text-3xl text-center">
+                    {city.name}
+                  </span>
                   <div className="flex flex-col justify-center items-center">
-                    <span className="text-white-900">
+                    <span className="text-white-900 text-center">
                       {newWeatherDate.split("at")[0]}
                     </span>
                     <span className="text-white-900">
                       {newWeatherDate.split("at")[1].split("GMT")[0]}
                     </span>
                   </div>
-                  <div className="flex gap-2">
+                  <div className="flex justify-center items-center">
                     <span className="card-title text-white-900 text-3xl">
                       {Math.floor(list.main.temp_max)} C&deg;
                     </span>
@@ -48,7 +50,7 @@ const WeatherCard = () => {
                     </span>
                   </div>
                   <div className="flex flex-col justify-center items-center">
-                    <span className="text-white-900 text-md">Feels Like</span>
+                    <span className="text-white-900 text-xl">Feels Like</span>
                     <span className="text-white-900 text-xl">
                       {Math.floor(list.main.feels_like)} C&deg;
                     </span>
@@ -59,7 +61,7 @@ const WeatherCard = () => {
                       {list.wind.speed} km/h
                     </span>
                   </div>
-                  <div>
+                  <div className="flex justify-center items-center">
                     <span className="text-white-900 text-xl">
                       {list.weather[0].description.charAt(0).toUpperCase() +
                         list.weather[0].description.slice(1)}
