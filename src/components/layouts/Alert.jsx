@@ -6,11 +6,11 @@ function Alert() {
 
   return (
     <div
-      className={`flex justify-center items-center w-full md:w-1/4 mx-auto mb-4 mt-6 px-12`}
+      className={`flex justify-center items-center w-full md:w-1/5 mx-auto mb-4 mt-6 px-12`}
       style={{ visibility: alert ? "visible" : "hidden" }}
     >
       <div className="alert alert-error w-full">
-        <div>
+        <div className="flex justify-center items-center w-full">
           <svg
             fill="none"
             viewBox="0 0 24 24"

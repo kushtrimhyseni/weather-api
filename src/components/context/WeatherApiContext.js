@@ -12,15 +12,6 @@ export const WeatherProvider = ({ children }) => {
   const inputHandler = (e) => {
     setInput(e.target.value);
   };
-  const clickHandler = () => {
-    if (input === "") {
-      alert("You must type something", "error");
-    } else {
-      getWeather();
-      clearInput.current.value = "";
-      setLoading(true);
-    }
-  };
 
   const clearResults = () => {
     setCity([]);
@@ -38,10 +29,14 @@ export const WeatherProvider = ({ children }) => {
       setWeather(data.list);
       setError("");
       setLoading();
+      if (data.cod === "404") {
+        setError("City not found, try again!");
+      }
     } catch (e) {
       setError("City not found");
     }
   };
+
   return (
     <WeatherApiContext.Provider
       value={{
@@ -52,7 +47,8 @@ export const WeatherProvider = ({ children }) => {
         clearInput,
         city,
         inputHandler,
-        clickHandler,
+        getWeather,
+        setLoading,
         clearResults,
       }}
     >
