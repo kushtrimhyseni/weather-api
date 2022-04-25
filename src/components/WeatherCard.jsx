@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import CityInfo from "./CityInfo";
 import WeatherApiContext from "./context/WeatherApiContext";
 import Spinner from "./Spinner";
 
@@ -9,13 +8,13 @@ const WeatherCard = () => {
 
   if (!loading) {
     return (
-      <div className="container mx-auto flex flex-col lg:flex-row gap-4">
+      <>
         {error ? (
           <div className="flex justify-center items-center text-base-400 text-3xl font-md font-raleway mt-8">
             {error}
           </div>
         ) : (
-          <div className="container w-full flex flex-col justify-start items-center gap-4 mt-12 mb-12 p-6 md:p-0 order-last lg:order-first">
+          <div className="w-full flex flex-col justify-start items-center gap-4 mt-12 mb-12 p-6 md:p-0 order-last lg:order-first">
             {weather?.map((list) => {
               console.log(list);
               id++;
@@ -81,10 +80,7 @@ const WeatherCard = () => {
             })}
           </div>
         )}
-        <div className="flex w-full md:w-1/4 md:order-first mt-12 mb-12 p-6 lg:p-0">
-          <CityInfo />
-        </div>
-      </div>
+      </>
     );
   } else {
     return <Spinner />;
