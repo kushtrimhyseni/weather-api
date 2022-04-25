@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import WeatherApiContext from "./context/WeatherApiContext";
+import WeatherApiContext from "./context/weather/WeatherApiContext";
 import Spinner from "./Spinner";
 
 const WeatherCard = () => {
@@ -14,9 +14,8 @@ const WeatherCard = () => {
             {error}
           </div>
         ) : (
-          <div className="w-full flex flex-col justify-start items-center gap-4 mt-12 mb-12 p-6 md:p-0 order-last lg:order-first">
+          <div className="w-full flex flex-col justify-start items-center gap-4 mt-0 lg:mt-12 mb-12 p-6 md:p-0 order-last lg:order-first">
             {weather?.map((list) => {
-              console.log(list);
               id++;
               const today = new Date(list.dt_txt);
               let newWeatherDate = new Intl.DateTimeFormat("en-US", {

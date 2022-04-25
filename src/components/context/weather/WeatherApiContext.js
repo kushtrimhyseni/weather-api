@@ -44,9 +44,11 @@ export const WeatherProvider = ({ children }) => {
         input,
         clearInput,
         city,
+        setInput,
         inputHandler,
         getWeather,
         setLoading,
+        setWeather,
         clearResults,
       }}
     >
