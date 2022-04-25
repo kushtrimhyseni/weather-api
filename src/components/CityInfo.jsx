@@ -11,7 +11,7 @@ const CityInfo = () => {
   return (
     <>
       {error ? (
-        <div className="flex justify-center items-center lg:items-start text-center text-base-400 text-3xl font-md font-raleway mt-8">
+        <div className="flex justify-center items-center lg:items-start text-center text-base-400 text-3xl font-md font-raleway mt-12">
           {error}
         </div>
       ) : (
@@ -62,8 +62,8 @@ const CityInfo = () => {
                     scrollWheelZoom={false}
                   >
                     <TileLayer
-                      attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-                      url="http://{s}.tile.osm.org/{z}/{x}/{y}.png"
+                      attribution='&copy; <a href="https://osm.org/copyright">OpenStreetMap</a> contributors'
+                      url="https://{s}.tile.osm.org/{z}/{x}/{y}.png"
                     />
                     <Marker
                       position={position}
