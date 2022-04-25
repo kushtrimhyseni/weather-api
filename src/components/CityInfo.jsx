@@ -11,7 +11,7 @@ const CityInfo = () => {
   return (
     <>
       {error ? (
-        <div className="flex justify-center items-center lg:items-start text-center text-base-400 text-3xl font-md font-raleway mt-12">
+        <div className="flex justify-center items-center lg:items-start text-center text-base-400 text-3xl font-md font-raleway mt-8">
           {error}
         </div>
       ) : (
@@ -32,7 +32,7 @@ const CityInfo = () => {
                     <h2 className="font-raleway text-xl">
                       City: {c.capital[0]}
                     </h2>
-                    <div className="flex flex-row flex-wrap gap-1 font-raleway">
+                    {/* <div className="flex flex-row flex-wrap gap-1 font-raleway">
                       Borders :
                       {c.borders.map((border) => {
                         return (
@@ -41,7 +41,7 @@ const CityInfo = () => {
                           </span>
                         );
                       })}
-                    </div>
+                    </div> */}
                     <div className="flex flex-col">
                       <span className="font-raleway text-md">
                         Population: {c.population}
