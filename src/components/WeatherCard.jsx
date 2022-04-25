@@ -30,7 +30,7 @@ const WeatherCard = () => {
                   <div className="flex justify-center items-center bg-grey-400 w-full h-[200px]  md:h-auto md:w-1/3 lg:w-[200px] card-image">
                     <figure>
                       <img
-                        src={`http://openweathermap.org/img/wn/${list.weather[0].icon}@2x.png`}
+                        src={`https://openweathermap.org/img/wn/${list.weather[0].icon}@2x.png`}
                         alt={list.weather[0].description}
                       />
                     </figure>
