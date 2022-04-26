@@ -6,7 +6,7 @@ const InputHandler = () => {
     useContext(WeatherApiContext);
   const { getCity } = useContext(CityApiContext);
   const handleKeyPress = (event) => {
-    if (event.keyCode == 13) {
+    if (event.keyCode === 13) {
       getWeather();
       getCity(input);
       clearInput.current.value = "";
