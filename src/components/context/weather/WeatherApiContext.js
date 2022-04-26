@@ -26,7 +26,7 @@ export const WeatherProvider = ({ children }) => {
     const data = await response.json();
     if (data.cod === "404") {
       setLoading();
-      setError("City not found, try again!");
+      setError("Weather nor found for entered city, try again!");
     } else {
       setCity(data.city);
       setWeather(data.list);

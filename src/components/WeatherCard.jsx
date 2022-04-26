@@ -10,7 +10,7 @@ const WeatherCard = () => {
     return (
       <>
         {error ? (
-          <div className="flex justify-center items-center text-base-400 text-3xl font-md font-raleway mt-8">
+          <div className="flex justify-center items-center text-center text-base-400 text-3xl font-md font-raleway mt-8">
             {error}
           </div>
         ) : (
