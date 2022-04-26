@@ -32,11 +32,11 @@ const CityInfo = () => {
                     <h2 className="font-raleway text-xl">
                       City: {c.capital[0]}
                     </h2>
-                    <div className="flex flex-row flex-wrap gap-1 font-raleway">
+                    <div className="flex flex-row flex-wrap font-raleway">
                       Borders :
                       {c.borders?.map((border) => {
                         return (
-                          <span className="font-raleway text-md font-bold">
+                          <span className="font-raleway text-md font-bold ml-2">
                             {border.split(" ")}
                           </span>
                         );
