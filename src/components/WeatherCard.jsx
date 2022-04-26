@@ -14,7 +14,7 @@ const WeatherCard = () => {
             {error}
           </div>
         ) : (
-          <div className="w-full flex flex-col justify-start items-center gap-4 mt-0 lg:mt-12 mb-12 p-6 md:p-0 order-last lg:order-first">
+          <div className="w-full flex flex-col justify-start items-center mt-0 lg:mt-12 mb-12 p-6 md:p-0 order-last lg:order-first">
             {weather?.map((list) => {
               id++;
               const today = new Date(list.dt_txt);
@@ -24,7 +24,7 @@ const WeatherCard = () => {
               }).format(today);
               return (
                 <div
-                  className="card card-side bg-[#5a5a5a] shadow-xl w-full flex-col md:flex-row"
+                  className="card card-side bg-[#5a5a5a] shadow-xl w-full flex-col md:flex-row mb-4"
                   key={id}
                 >
                   <div className="flex justify-center items-center bg-grey-400 w-full h-[200px]  md:h-auto md:w-1/3 lg:w-[200px] card-image">
@@ -35,7 +35,7 @@ const WeatherCard = () => {
                       />
                     </figure>
                   </div>
-                  <div className="card-body grid grid-cols-1 lg:grid-cols-6 space-x-4 content-between">
+                  <div className="card-body grid grid-cols-1 lg:grid-cols-6 content-between">
                     <span className="text-white-900 text-3xl font-raleway font-md flex justify-center items-center">
                       {city.name}
                     </span>
