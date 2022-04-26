@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
 import CityApiContext from "./context/city/CityApiContext";
-// import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
-// import "leaflet/dist/leaflet.css";
-// import markerIconPng from "leaflet/dist/images/marker-icon.png";
-// import { Icon } from "leaflet";
+import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
+import "leaflet/dist/leaflet.css";
+import markerIconPng from "leaflet/dist/images/marker-icon.png";
+import { Icon } from "leaflet";
 
 const CityInfo = () => {
   const { capital, error } = useContext(CityApiContext);
@@ -17,7 +17,7 @@ const CityInfo = () => {
       ) : (
         <div className="w-full lg:w-1/4 mt-12">
           {capital?.map((c) => {
-            // const position = [c.latlng[0], c.latlng[1]];
+            const position = [c.latlng[0], c.latlng[1]];
             id++;
             return (
               <div className="container p-6 lg:p-0" key={id}>
@@ -56,8 +56,7 @@ const CityInfo = () => {
                   </div>
                 </div>
                 <div className="mt-4 rounded-lg">
-                  Testin if map crash for IOS Devices
-                  {/* <MapContainer
+                  <MapContainer
                     center={position}
                     zoom={13}
                     scrollWheelZoom={false}
@@ -80,7 +79,7 @@ const CityInfo = () => {
                         <span>{c.capital[0]}</span>
                       </Popup>
                     </Marker>
-                  </MapContainer> */}
+                  </MapContainer>
                 </div>
               </div>
             );
