@@ -10,7 +10,7 @@ const WeatherMapApi = () => {
       <Alert />
       <div className="container mx-auto flex flex-col md: flex-row justify-center items-center">
         <InputHandler />
-        <div className="flex ml-2">
+        <div className="flex">
           <SearchButton />
           <ClearButton />
         </div>
