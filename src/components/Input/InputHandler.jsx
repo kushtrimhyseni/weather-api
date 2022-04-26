@@ -1,16 +1,23 @@
 import React, { useContext } from "react";
 import WeatherApiContext from "../context/weather/WeatherApiContext";
 import CityApiContext from "../context/city/CityApiContext";
+import AlertContext from "../context/alert/AlertContext";
 const InputHandler = () => {
   const { clearInput, inputHandler, getWeather, input, setLoading } =
     useContext(WeatherApiContext);
   const { getCity } = useContext(CityApiContext);
+  const { setAlert } = useContext(AlertContext);
+
   const handleKeyPress = (event) => {
     if (event.keyCode === 13) {
-      getWeather();
-      getCity(input);
-      clearInput.current.value = "";
-      setLoading(true);
+      if (input === "") {
+        setAlert("City cannot be empty", "error");
+      } else {
+        getWeather();
+        getCity(input);
+        clearInput.current.value = "";
+        setLoading(true);
+      }
     }
   };
 
