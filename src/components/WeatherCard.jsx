@@ -35,7 +35,7 @@ const WeatherCard = () => {
                       />
                     </figure>
                   </div>
-                  <div className="card-body grid grid-cols-1 lg:grid-cols-6 gap-4 content-between">
+                  <div className="card-body grid grid-cols-1 lg:grid-cols-6 space-x-4 content-between">
                     <span className="text-white-900 text-3xl font-raleway font-md flex justify-center items-center">
                       {city.name}
                     </span>
