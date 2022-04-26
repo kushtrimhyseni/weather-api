@@ -20,11 +20,9 @@ const SearchButton = () => {
     }
   };
   return (
-    <div className="ml-2">
-      <button onClick={clickHandler} className="btn btn-active mt-4">
-        Search
-      </button>
-    </div>
+    <button onClick={clickHandler} className="btn btn-active mt-4 mr-4">
+      Search
+    </button>
   );
 };
 
