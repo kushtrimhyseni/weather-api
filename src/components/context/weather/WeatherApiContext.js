@@ -26,7 +26,7 @@ export const WeatherProvider = ({ children }) => {
         },
       });
     }
-  }, [weather, city, searches, input, setSearches]);
+  }, [weather, city]);
 
   const clearResults = () => {
     setCity([]);
