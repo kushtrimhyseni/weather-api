@@ -1,10 +1,23 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useContext, useEffect } from "react";
+import { RecentSearchesContext } from "../recentsearches/RecentSearches";
+import WeatherApiContext from "../weather/WeatherApiContext";
 
 const CityApiContext = createContext();
 
 export const CityApiProvider = ({ children }) => {
   const [capital, setCapital] = useState([]);
   const [error, setError] = useState("");
+  const { searches, setSearches } = useContext(RecentSearchesContext);
+  const { input } = useContext(WeatherApiContext);
+
+  useEffect(() => {
+    if (capital) {
+      setSearches({
+        ...searches,
+        [input]: { ...searches[input], city: capital },
+      });
+    }
+  }, [capital]);
 
   const getCity = async (input) => {
     const response = await fetch(

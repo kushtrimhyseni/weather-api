@@ -1,4 +1,5 @@
-import { createContext, useState, useRef } from "react";
+import { createContext, useState, useRef, useContext, useEffect } from "react";
+import { RecentSearchesContext } from "../recentsearches/RecentSearches";
 
 const WeatherApiContext = createContext();
 export const WeatherProvider = ({ children }) => {
@@ -7,11 +8,25 @@ export const WeatherProvider = ({ children }) => {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const [input, setInput] = useState("");
+  const { searches, setSearches } = useContext(RecentSearchesContext);
   const clearInput = useRef(null);
 
   const inputHandler = (e) => {
     setInput(e.target.value);
   };
+
+  useEffect(() => {
+    if (city && weather) {
+      setSearches({
+        ...searches,
+        [input]: {
+          ...searches[input],
+          list: weather,
+          weatherCity: city,
+        },
+      });
+    }
+  }, [weather, city]);
 
   const clearResults = () => {
     setCity([]);
@@ -48,6 +63,7 @@ export const WeatherProvider = ({ children }) => {
         inputHandler,
         getWeather,
         setLoading,
+        setCity,
         setWeather,
         clearResults,
       }}
