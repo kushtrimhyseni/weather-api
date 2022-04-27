@@ -17,7 +17,7 @@ export const CityApiProvider = ({ children }) => {
         [input]: { ...searches[input], city: capital },
       });
     }
-  }, [capital]);
+  }, [capital, input, searches, setSearches]);
 
   const getCity = async (input) => {
     const response = await fetch(
