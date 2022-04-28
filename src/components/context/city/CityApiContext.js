@@ -12,7 +12,7 @@ export const CityApiProvider = ({ children }) => {
   const { input } = useContext(WeatherApiContext);
 
   useEffect(() => {
-    if (capital.length) {
+    if (capital?.length) {
       setSearches({
         ...searches,
         [capital[0].capital[0]]: {
