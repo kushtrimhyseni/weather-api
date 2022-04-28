@@ -28,7 +28,7 @@ module.exports = {
         100: "#525252",
       },
       yellow: {
-        900: "#FFDB20",
+        900: "#D3A34D",
         700: "#FFE871",
         500: "#FFF0A3",
         300: "#FBF4D3",
@@ -82,9 +82,6 @@ module.exports = {
         300: "#D1C8FF",
         100: "#F0EDFF",
       },
-      yellow: {
-        900: "#D3A34D",
-      },
     },
     screens: {
       sm: "640px",
@@ -131,11 +128,6 @@ module.exports = {
       fontFamily: {
         indie: ["Indie Flower", "cursive"],
         raleway: ["Raleway", "sans-serif"],
-      },
-      backgroundImage: {
-        "split-black-darkblue":
-          "linear-gradient(95deg,#17182F -36.26%,#616289 135.23%);",
-        "hero-bg": "url('https://i.ibb.co/vP4FtRx/hero-bg.jpg')",
       },
     },
   },

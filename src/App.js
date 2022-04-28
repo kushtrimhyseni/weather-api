@@ -6,7 +6,6 @@ import { AlertProvider } from "./components/context/alert/AlertContext";
 import CityInfo from "./components/CityInfo";
 import { CityApiProvider } from "./components/context/city/CityApiContext";
 import { RecentSearchesProvider } from "./components/context/recentsearches/RecentSearches";
-import RecentSearch from "./components/RecentSearch";
 
 function App() {
   return (
@@ -16,7 +15,6 @@ function App() {
         <WeatherProvider>
           <AlertProvider>
             <CityApiProvider>
-              <RecentSearch />
               <WeatherInputCity />
               <div className="container mx-auto flex flex-col justify-center lg:flex-row gap-4">
                 <WeatherCard />

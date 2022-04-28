@@ -25,13 +25,15 @@ const RecentSearch = () => {
   };
 
   return (
-    <div className="container mx-auto flex gap-2 mt-8">
-      <span>Recent Searches:</span>
+    <div className="container mx-auto flex flex-col gap-2 mt-8 px-6 lg:px-0">
+      <span className="font-raleway font-bold text-[#021d38] mt-2">
+        Recent Searches:
+      </span>
       {renderSearches()?.map((search, index) => (
         <React.Fragment key={index}>
           <span
             onClick={() => handleClick(search, index)}
-            className={`underline cursor-pointer ${
+            className={`underline cursor-pointer font-raleway ${
               activeIndex === index ? "text-[#800080]" : "text-[#0066CC]"
             }`}
           >
