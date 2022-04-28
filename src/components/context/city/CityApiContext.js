@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { createContext, useState, useContext, useEffect } from "react";
 import { RecentSearchesContext } from "../recentsearches/RecentSearches";
 import WeatherApiContext from "../weather/WeatherApiContext";
@@ -11,15 +12,18 @@ export const CityApiProvider = ({ children }) => {
   const { input } = useContext(WeatherApiContext);
 
   useEffect(() => {
-    if (capital) {
+    if (capital.length) {
       setSearches({
         ...searches,
-        [input]: { ...searches[input], city: capital },
+        [capital[0].capital[0]]: {
+          ...searches[capital[0].capital[0]],
+          city: capital,
+        },
       });
     }
   }, [capital]);
 
-  const getCity = async (input) => {
+  const getCity = async () => {
     const response = await fetch(
       `https://restcountries.com/v3.1/capital/${input}
       `

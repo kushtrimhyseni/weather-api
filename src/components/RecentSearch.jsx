@@ -5,9 +5,9 @@ import CityApiContext from "./context/city/CityApiContext";
 
 const RecentSearch = () => {
   const { searches } = useContext(RecentSearchesContext);
-  const [clicked, setClicked] = useState(false);
   const { setCapital } = useContext(CityApiContext);
   const { setCity, setWeather } = useContext(WeatherApiContext);
+  const [activeIndex, setActiveIndex] = useState();
 
   const renderSearches = () => {
     const cityKeys = Object.keys(searches).filter((key) => key !== "");
@@ -18,35 +18,26 @@ const RecentSearch = () => {
   };
 
   const handleClick = (search, index) => {
-    setCapital(search.data);
-    setCity(search.city);
+    setActiveIndex(index);
+    setCapital(search.city);
+    setCity(search.weatherCity);
     setWeather(search.list);
-    if (clicked === index) {
-      setClicked(false);
-    } else {
-      setClicked(true);
-    }
   };
-
-  if (searches) {
-    renderSearches();
-  }
 
   return (
     <div className="container mx-auto flex gap-2 mt-8">
       <span>Recent Searches:</span>
-      {renderSearches()?.map((search) => (
-        <>
-          <div onClick={() => handleClick(search)}>
-            <span
-              className={`underline cursor-pointer ${
-                clicked ? "text-[#800080]" : "text-[#0066CC]"
-              }`}
-            >
-              {search.weatherCity?.name}
-            </span>
-          </div>
-        </>
+      {renderSearches()?.map((search, index) => (
+        <React.Fragment key={index}>
+          <span
+            onClick={() => handleClick(search, index)}
+            className={`underline cursor-pointer ${
+              activeIndex === index ? "text-[#800080]" : "text-[#0066CC]"
+            }`}
+          >
+            {search.weatherCity?.name}
+          </span>
+        </React.Fragment>
       ))}
     </div>
   );

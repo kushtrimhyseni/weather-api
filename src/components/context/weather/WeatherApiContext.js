@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { createContext, useState, useRef, useContext, useEffect } from "react";
 import { RecentSearchesContext } from "../recentsearches/RecentSearches";
 
@@ -19,8 +20,8 @@ export const WeatherProvider = ({ children }) => {
     if (city && weather) {
       setSearches({
         ...searches,
-        [input]: {
-          ...searches[input],
+        [city.name]: {
+          ...searches[city.name],
           list: weather,
           weatherCity: city,
         },

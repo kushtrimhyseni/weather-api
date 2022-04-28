@@ -7,7 +7,6 @@ import { Icon } from "leaflet";
 
 const CityInfo = () => {
   const { capital, error } = useContext(CityApiContext);
-  let id = 0;
   return (
     <>
       {error ? (
@@ -16,11 +15,10 @@ const CityInfo = () => {
         </div>
       ) : (
         <div className="w-full lg:w-1/4 mt-12">
-          {capital?.map((c) => {
+          {capital?.map((c, index) => {
             const position = [c.latlng[0], c.latlng[1]];
-            id++;
             return (
-              <div className="container p-6 lg:p-0" key={id}>
+              <div className="container p-6 lg:p-0" key={index}>
                 <div className="card w-full lg:w-96 shadow-xl">
                   <figure>
                     <img src={c.flags.svg} alt={c.capital[0]} />
@@ -34,9 +32,12 @@ const CityInfo = () => {
                     </h2>
                     <div className="flex flex-row flex-wrap font-raleway">
                       Borders :
-                      {c.borders?.map((border) => {
+                      {c.borders?.map((border, index) => {
                         return (
-                          <span className="font-raleway text-md font-bold ml-2">
+                          <span
+                            key={index}
+                            className="font-raleway text-md font-bold ml-2"
+                          >
                             {border.split(" ")}
                           </span>
                         );
